@@ -1,8 +1,3 @@
-
-// =====================================
-// PASSWORD SHOW / HIDE
-// =====================================
-
 document.querySelectorAll(".password-toggle").forEach((button) => {
 
   button.addEventListener("click", () => {
@@ -32,11 +27,6 @@ document.querySelectorAll(".password-toggle").forEach((button) => {
 
 });
 
-
-// =====================================
-// ELEMENTS
-// =====================================
-
 const loginPanel = document.getElementById("loginPanel");
 const signupPanel = document.getElementById("signupPanel");
 
@@ -50,14 +40,14 @@ const loginForm = document.getElementById("loginForm");
 const signupForm = document.getElementById("signupForm");
 
 
-// =====================================
-// CLEAR FORM
-// =====================================
+
 
 function clearForm(form) {
 
   form.reset();
-
+  form.querySelectorAll(".input-box").forEach((box) => {
+    box.classList.remove("valid");
+  });
   form.querySelectorAll(".error").forEach((error) => {
     error.textContent = "";
   });
@@ -85,10 +75,6 @@ function clearForm(form) {
 }
 
 
-// =====================================
-// SWITCH TO SIGNUP
-// =====================================
-
 showSignup.addEventListener("click", () => {
 
   clearForm(loginForm);
@@ -99,16 +85,12 @@ showSignup.addEventListener("click", () => {
 
   loginCard.classList.add("signup-mode");
 
-  // Change logo
+  
   brandSymbol.textContent = "C";
   brandText.textContent = "Create Account";
 
 });
 
-
-// =====================================
-// SWITCH TO LOGIN
-// =====================================
 
 showLogin.addEventListener("click", () => {
 
@@ -120,15 +102,11 @@ showLogin.addEventListener("click", () => {
 
   loginCard.classList.remove("signup-mode");
 
-  // Change logo
   brandSymbol.textContent = "S";
   brandText.textContent = "Sign In";
 
 });
 
-// =====================================
-// EMAIL VALIDATION
-// =====================================
 
 function validateEmail(email) {
 
@@ -138,10 +116,6 @@ function validateEmail(email) {
 
 }
 
-
-// =====================================
-// SHOW ERROR
-// =====================================
 
 function setError(inputId, errorId, message) {
 
@@ -155,10 +129,6 @@ function setError(inputId, errorId, message) {
 }
 
 
-// =====================================
-// SHOW MESSAGE
-// =====================================
-
 function showMessage(id, message, type) {
 
   const element = document.getElementById(id);
@@ -169,9 +139,6 @@ function showMessage(id, message, type) {
 }
 
 
-// =====================================
-// LOGIN VALIDATION
-// =====================================
 
 function validateLogin() {
 
@@ -231,10 +198,6 @@ function validateLogin() {
 
 }
 
-
-// =====================================
-// SIGNUP VALIDATION
-// =====================================
 
 function validateSignup() {
 
@@ -299,10 +262,6 @@ function validateSignup() {
 }
 
 
-// =====================================
-// DEMO LOADING
-// =====================================
-
 function runDemo(buttonId, messageId, message) {
 
   const button = document.getElementById(buttonId);
@@ -321,11 +280,6 @@ function runDemo(buttonId, messageId, message) {
 
 }
 
-
-// =====================================
-// LOGIN SUBMIT
-// =====================================
-
 loginForm.addEventListener("submit", (event) => {
 
   event.preventDefault();
@@ -340,11 +294,6 @@ loginForm.addEventListener("submit", (event) => {
 
 });
 
-
-// =====================================
-// SIGNUP SUBMIT
-// =====================================
-
 signupForm.addEventListener("submit", (event) => {
 
   event.preventDefault();
@@ -358,12 +307,6 @@ signupForm.addEventListener("submit", (event) => {
   );
 
 });
-
-
-// =====================================
-// FORGOT PASSWORD
-// =====================================
-
 document.getElementById("forgotLink").addEventListener("click", (event) => {
 
   event.preventDefault();
@@ -375,11 +318,6 @@ document.getElementById("forgotLink").addEventListener("click", (event) => {
   );
 
 });
-
-
-// =====================================
-// CLEAR ERRORS WHILE TYPING
-// =====================================
 
 document.querySelectorAll("input").forEach((input) => {
 
@@ -395,6 +333,38 @@ document.querySelectorAll("input").forEach((input) => {
         errorElement.textContent = "";
       }
 
+    }
+
+  });
+
+});
+const signupFields = [
+  {
+    id: "fullName",
+    condition: (value) => value.trim().length >= 2
+  },
+  {
+    id: "signupEmail",
+    condition: (value) => validateEmail(value.trim())
+  },
+  {
+    id: "signupPassword",
+    condition: (value) => value.length >= 6
+  }
+];
+
+signupFields.forEach((field) => {
+
+  const input = document.getElementById(field.id);
+
+  input.addEventListener("input", () => {
+
+    const box = input.closest(".input-box");
+
+    if (field.condition(input.value)) {
+      box.classList.add("valid");
+    } else {
+      box.classList.remove("valid");
     }
 
   });

@@ -1,20 +1,24 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#081411" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#190B18">
 
-  <title>Login</title>
+  <title>Sign In</title>
 
-  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="./style.css">
   <script src="script.js" defer></script>
+ 
+
+
 </head>
 
 <body>
 
-  <!-- Animated Background -->
+  
   <div class="gradient-bg"></div>
   <div class="orb orb-one"></div>
   <div class="orb orb-two"></div>
@@ -25,20 +29,18 @@
 
     <section class="login-card" id="loginCard">
 
-      <!-- Logo -->
-<!-- Dynamic Logo -->
-<a href="#" class="brand" aria-label="Nova home" id="brandLogo">
-  <span class="brand-symbol" id="brandSymbol">S</span>
-  <span>
-    <span id="brandText">Sign In</span>
-    <span class="brand-dot"></span>
-  </span>
-</a>
+     
+      <a href="#" class="brand" aria-label="Home" id="brandLogo">
+        <span class="brand-symbol" id="brandSymbol">S</span>
+        <span>
+          <span id="brandText">Sign In</span>
+          <span class="brand-dot"></span>
+        </span>
+      </a>
 
-      <!-- LOGIN FORM -->
+     
       <div class="form-panel login-panel" id="loginPanel">
 
-        
         <div class="heading">
           <p class="subtitle">
             Fill this form to sign in to your account.
@@ -47,29 +49,27 @@
 
         <form id="loginForm" novalidate>
 
-          <!-- Email -->
+         
           <div class="form-group">
             <label for="loginEmail">Email address</label>
 
             <div class="input-box">
-              <!-- <span class="field-icon" aria-hidden="true">@</span> -->
-
               <input
                 type="email"
                 id="loginEmail"
                 placeholder="bhumi@example.com"
                 autocomplete="email"
                 required
-                aria-describedby="loginEmailError"
-              />
+                aria-describedby="loginEmailError">
             </div>
 
             <small class="error" id="loginEmailError"
               aria-live="polite"></small>
           </div>
 
-          <!-- Password -->
+        
           <div class="form-group">
+
             <div class="label-row">
               <label for="loginPassword">Password</label>
 
@@ -79,8 +79,6 @@
             </div>
 
             <div class="input-box">
-              <!-- <span class="field-icon lock-icon" aria-hidden="true">⌑</span> -->
-
               <input
                 type="password"
                 id="loginPassword"
@@ -88,16 +86,15 @@
                 autocomplete="current-password"
                 required
                 minlength="7"
-                aria-describedby="loginPasswordError"
-              />
+                aria-describedby="loginPasswordError">
 
               <button
                 type="button"
                 class="password-toggle"
                 data-toggle="loginPassword"
                 aria-label="Show password"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
+
                 <svg xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width="22"
@@ -107,8 +104,10 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round">
+
                   <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
                   <circle cx="12" cy="12" r="3"/>
+
                 </svg>
               </button>
             </div>
@@ -117,14 +116,14 @@
               aria-live="polite"></small>
           </div>
 
-          <!-- Remember Me -->
+       
           <label class="remember-option">
-            <input type="checkbox" id="rememberMe" />
+            <input type="checkbox" id="rememberMe">
             <span class="checkmark"></span>
             Remember me
           </label>
 
-          <!-- Login Button -->
+          
           <button type="submit" class="submit-button" id="loginButton">
             <span class="button-label">Sign in</span>
             <span class="spinner"></span>
@@ -135,6 +134,7 @@
 
         </form>
 
+       
         <div class="form-bottom">
           <span>Doesn't have account?</span>
 
@@ -145,7 +145,7 @@
 
       </div>
 
-      <!-- SIGNUP FORM -->
+  
       <div class="form-panel signup-panel" id="signupPanel" hidden>
 
         <div class="heading">
@@ -156,13 +156,10 @@
 
         <form id="signupForm" novalidate>
 
-          <!-- Full Name -->
           <div class="form-group">
             <label for="fullName">Full name</label>
 
             <div class="input-box">
-              <!-- <span class="field-icon" aria-hidden="true">✳</span> -->
-
               <input
                 type="text"
                 id="fullName"
@@ -170,42 +167,36 @@
                 autocomplete="name"
                 required
                 minlength="2"
-                aria-describedby="fullNameError"
-              />
+                aria-describedby="fullNameError">
             </div>
 
             <small class="error" id="fullNameError"
               aria-live="polite"></small>
           </div>
 
-          <!-- Signup Email -->
+        
           <div class="form-group">
             <label for="signupEmail">Email address</label>
 
             <div class="input-box">
-              <!-- <span class="field-icon" aria-hidden="true">@</span> -->
-
               <input
                 type="email"
                 id="signupEmail"
                 placeholder="bhumi@example.com"
                 autocomplete="email"
                 required
-                aria-describedby="signupEmailError"
-              />
+                aria-describedby="signupEmailError">
             </div>
 
             <small class="error" id="signupEmailError"
               aria-live="polite"></small>
           </div>
 
-          <!-- Signup Password -->
+          
           <div class="form-group">
             <label for="signupPassword">Create password</label>
 
             <div class="input-box">
-              <!-- <span class="field-icon lock-icon" aria-hidden="true">⌑</span> -->
-
               <input
                 type="password"
                 id="signupPassword"
@@ -213,16 +204,15 @@
                 autocomplete="new-password"
                 required
                 minlength="6"
-                aria-describedby="signupPasswordError"
-              />
+                aria-describedby="signupPasswordError">
 
               <button
                 type="button"
                 class="password-toggle"
                 data-toggle="signupPassword"
                 aria-label="Show password"
-                aria-pressed="false"
-              >
+                aria-pressed="false">
+
                 <svg xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   width="22"
@@ -232,8 +222,10 @@
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round">
+
                   <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
                   <circle cx="12" cy="12" r="3"/>
+
                 </svg>
               </button>
             </div>
@@ -242,7 +234,7 @@
               aria-live="polite"></small>
           </div>
 
-          <!-- Signup Button -->
+         
           <button type="submit" class="submit-button" id="signupButton">
             <span class="button-label">Create account</span>
             <span class="button-arrow" aria-hidden="true"></span>
@@ -254,6 +246,7 @@
 
         </form>
 
+       
         <div class="form-bottom">
           <span>Already a member?</span>
 
